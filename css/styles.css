@@ -1,0 +1,396 @@
+/*
+Main styling that does not get altered due to screen size.
+Anything that gets altered by screen size is in media queries.
+*/
+
+html {
+	font-family: 'Raleway';
+	background-color: white;
+}
+
+body {	
+	margin: 20px auto;
+	width: 90%;
+}
+
+h1, caption {
+	text-align: center;
+	font-size: 2em;
+	margin: 0;
+	padding: 0;
+}
+
+h3 {
+	text-align: center;
+}
+
+/* Header styling/functioning */
+header {
+	padding-top: 10px;
+	background: linear-gradient(to right, white, rgba(255,255,255, .2) 100%),
+				url(../imgs/header/1.jpg) center no-repeat;
+	background-size: cover;
+	background-position: 0px;
+}
+/* This class is added to the header tag via javascript to animate the background image. */
+.slideOut {
+	animation: blend 2s;
+}
+/* Slides the header image out of the screen to left to make it look like a new image slides back in.*/
+@keyframes blend {
+	1%		{background-position: 1px;}
+	50%		{background-position: 2500px;}
+	100%	{background-position: 0px;}
+}
+
+
+#logo {
+	padding-top: 10px;
+	width: 30%;
+}
+
+nav a {
+	color: rgb(12,48,84);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+header li {
+	list-style: none;
+}
+
+#social {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.socialIcons {
+	width: 2rem;
+	height: 2rem;
+}
+
+/* End of header styling */
+
+footer {
+	color: rgb(204,204,204);
+	margin-top: 40px;
+	text-align: center;
+	background-color: rgba(12,48,84, .7);
+}
+
+/* 	Styling I wanted a certain way to make it consistant was used with span element
+	
+	Small caps was not good enough what I was trying to acheive
+*/
+span {
+	font-size: .8em;
+}
+
+section {
+	padding: 10px;
+	margin-top: 40px;
+	background-color: rgba(12,48,84, .7);
+	color: rgb(204,204,204);
+
+}
+
+article {
+	padding: 10px;
+	padding-bottom: 10px
+	background-color: rgba(255,255,255, .4);
+	color: rgb(12,48,84);
+}
+
+/* 	Home styling
+
+	Div container on home page */
+#photos {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center;
+}
+/* Styles ALL photos by class */
+.allPhotos {
+	flex-basis: 10%;
+	flex: 1 1 300px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	font-size: 2em;
+	text-align: center;
+	margin: 15px 15px;
+}
+
+/* I do know this is not a real watermark. just the affect of one.
+	
+	If someone wants to steal the images I know they will however
+	most people will right click on image and save and realize its
+	the watermark and quite possibly give up.
+
+	I was just going for the affect. no more no less.
+
+	In my eyes I have acheived exactly what I wanted this way
+
+*/
+.watermark {
+	width: 100%;
+	height: 100%;
+}
+/* End of home styling */
+
+
+/* Contact form/page styling */
+#contactContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+#address {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	align-self: center;
+}
+
+.contactList {
+	padding: 0px;
+	max-width: 1000px;
+	margin: 10px auto;
+}
+
+.contactList li {
+	display: flex;
+	flex-wrap: wrap;
+  	align-items: center;
+  	padding: 10px;
+}
+
+.contactList > li > label {
+	flex: 1 0 220px;
+  	max-width: 220px;
+}
+
+.contactList > li > label + * {
+	flex: 1 1 220px;
+	max-width: 220px;
+}
+
+.contactButtons {
+	font-family: 'Raleway';
+	margin-left: 10px;
+	border: 1px solid rgba(255,255,255, .6);
+	padding: 10px 20px;
+	background-color: rgba(255,255,255, .5);
+}
+
+.contactButtons:hover {
+	background-color: rgba(255,255,255, .6);
+}
+/* End of contact styling */
+
+/* Validation on contact */
+
+.contactFields {
+	height: 30px;
+	text-align: left;
+	border: none;
+	font-family: 'Raleway';
+	background-color: rgba(255,255,255, .6);
+	color: rgb(12,48,84);
+}
+
+.contactFields:focus {
+	color: rgb(12,48,84);
+}
+.contactFields:focus:valid {
+	background: rgb(215,255,215);
+}
+
+.contactFields:focus:invalid {
+	background: rgb(255,215,215);
+}
+/* End of validation */
+
+/* Calendar styling */
+
+#calendarTable {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	
+	color: rgb(12,48,84);
+	font-weight: bold;
+}
+
+#calendarTable tr, #calendarTable tbody {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	width: 100%;
+}
+
+#calendarTable caption {
+	text-align: center;
+	grid-column: 1 / -1;
+	font-size: 130%;
+	font-weight: bold;
+	background-color: white;
+	border: solid 1px rgb(12,48,84);
+	color: rgb(12,48,84);
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+#calendarTable .weekDays {
+	background-color: white;
+	border: solid 1px rgb(12,48,84);
+}
+
+#calendarTable .weekDates {
+	background-color: white;
+	border: solid 1px rgb(12,48,84);
+}
+
+#calendarTable .date {
+	text-align: center;
+	margin-bottom: 5px;
+	padding: 4px;
+	color: rgb(12,48,84);
+	width: 30px;
+	flex: 0 0 auto;
+	align-self: flex-end ;
+	border: solid 1px rgb(12,48,84);
+}
+
+#calendarTable #today {
+	background-color: rgba(255,255,255, .8);
+}
+
+#calendarTable td {
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+}
+
+#calendarTable .event {
+  	flex: 0 0 auto;
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height: 14px;
+	background: rgba(215,215,215, .3);
+	border: 1px solid rgb(12,48,84);
+	text-decoration: none;
+}
+
+/* End of calendar styling */
+
+/* Styling for phones ----------------------------------------------------- */
+@media screen and (max-width: 600px) {
+
+	body {
+		width: 100%;
+	}
+
+	/* Nav styles */
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		background-color: rgba(255,255,255, .4);
+	}
+
+	/* Pull down menu for mobile so hovers over content instead of moving it */
+
+	#navicon:hover+#navList, #navList:hover {
+		/* "position: absolute" needed on the ul hover or when you do 
+		hover it will shift the content below it further down */
+		display: flex;
+	    flex-direction: column;
+		position: absolute;
+	    top: 48px;
+	}
+
+
+	#navList {
+    	display: none;
+   }
+   /* Everything in the navList li field helps with dropdown
+   over content instead of shifting content. 
+   also styling block cells */
+	#navList li {
+		display: block;
+		width: 150%;
+		position: relative;
+		padding: 5px 10px;
+		background-color: rgba(255,255,255, .4);
+		box-shadow: black .5px 0px 1px;
+	}
+
+	#navList li:hover {
+		background-color: rgba(255,255,255, .5);
+	}
+
+	#navList li a {
+		color: rgb(12,48,84);
+		display: block;
+	}
+	/* End of nav styling */
+
+	/* Calendar styling */
+
+	#calendarTable .daysOfWeek {
+		display: none;
+	}
+
+	#calendarTable, #calendarTable tr, #calendarTable tbody {
+		grid-template-columns: 1fr;
+	}
+
+	#calendarTable tr {
+		grid-column: 1 / 2;
+	}
+
+	/* End of calendar styling */
+
+}
+
+
+/* Styling for tablet/desktop--------------------------------------------------*/
+@media screen and (min-width: 601px) {
+
+	/* Nav styles */
+
+	#navicon {
+		display: none;
+	}
+	
+	nav {
+		background-color: rgba(255,255,255, .4);
+	}
+
+	nav ul {
+		display: flex;
+	   	justify-content: flex-end;
+	   	align-items: center;
+		height: 40px;
+	}
+
+	nav ul li a {
+		padding: 10px 20px;
+		width: 25%;
+		text-align: center;
+	}
+
+	nav ul li a:hover, .selected {
+		background-color: rgba(255,255,255, .1);
+		border-top: 2px solid rgb(12,48,84);
+		border-bottom: 2px solid rgb(12,48,84);
+	}
+	/* End of nav styling */
+
+
+}
+
+

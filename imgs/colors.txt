@@ -1,0 +1,12 @@
+grey:
+hex:#CCCCCC
+rgb: rgb(204,204,204)
+
+
+blue: this looks more purple
+hex:#1F0056
+rgb:rgb(31,0,86);
+
+new blue: this is more navy blue
+hex: #0c3054
+rgb(12,48,84)
